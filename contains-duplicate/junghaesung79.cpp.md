@@ -6,9 +6,9 @@
   * input으로 제공된 vector(nums)의 size를 구한다.(vl)
   * nums를 set으로 변환하며 다음 그것의 size를 구한다.(sl)
   * 두 값을 비교하여 동일 여부에 따라 부울값을 반환한다.
-* 2 이걸로 함!
+* 2 
   * 방법 1에서 set을 사용하던 것을 unordered_set으로 바꾼다.
-* 3
+* 3 이걸로 함!
   * vector를 순환하며 요소를 unordered_set에 추가한다.
   * 순환하며 이미 있는 요소일 경우 true를 반환한다.
   * 순환을 마칠 경우 false를 반환한다.
