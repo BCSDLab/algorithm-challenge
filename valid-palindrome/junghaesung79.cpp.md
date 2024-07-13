@@ -2,9 +2,8 @@
 ---
 ## 문제 해결 방법
 ---
-* 1
-  * 문자열의 양쪽 끝에서 시작해서 한 문자씩 확인한다.
-  * 문자가 아닐 경우 그 문자를 건너 뛴다.
+* 문자열의 양쪽 끝에서 시작해서 한 문자씩 확인한다.
+* 문자가 아닐 경우 그 문자를 건너 뛴다.
 ## 자료구조 선택
 ---
 ## 성능
@@ -16,12 +15,13 @@
 ---
 # Code
 
-```cpp class Solution {
+```cpp
+class Solution {
  private:
-  char normalize(char c) {
-    if (std::isalpha(c)) {
-      return std::tolower(c);
-    } else if (std::isdigit(c)) {
+  char checkChar(char c) {
+    if (isalpha(c)) {
+      return tolower(c);
+    } else if (isdigit(c)) {
       return c;
     } else {
       return 0;
@@ -34,8 +34,8 @@
     int right = s.size() - 1;
 
     while (left < right) {
-      char leftChar = normalize(s[left]);
-      char rightChar = normalize(s[right]);
+      char leftChar = checkChar(s[left]);
+      char rightChar = checkChar(s[right]);
 
       if (leftChar == 0) {
         left++;
@@ -57,5 +57,4 @@
     return true;
   }
 };
-
 ```

@@ -7,7 +7,7 @@
   * 해시맵에 s의 문자들을 저장한다.(키-값: 알파벳-갯수)
   * 해시맵에서 t의 문자들을 차감하며 그때 값이 0보다 작아지면 false를 반환한다.
   * 반복문을 빠져나오면 true를 반환한다.
-* 2
+* 2 이걸로 함!
   * 1번 방법에서의 해시맵을 벡터나 배열로 변경하여 같은 단계를 따른다.
   * c - 'a' 하여 인덱스 범위로 만든다.
 * 3
@@ -39,9 +39,7 @@
 # Code
 
 ```cpp
-
 class Solution {
-
  public:
   bool isAnagram(string s, string t) {
     if (s.length() != t.length()) return false;
@@ -57,5 +55,4 @@ class Solution {
     return true;
   }
 };
-
 ```
