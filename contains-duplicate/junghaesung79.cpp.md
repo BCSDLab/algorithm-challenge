@@ -56,15 +56,15 @@
 ```cpp
 class Solution {
 public:
-    bool containsDuplicate(vector<int>& nums) {
-        unordered_set<int> nums_set;
+  bool containsDuplicate(vector<int>& nums) {
+    unordered_set<int> nums_set;
 
-        for (int i : nums) {
-            if (nums_set.find(i) != nums_set.end()) return true;
-            nums_set.insert(i);
-        }
-
-        return false;
+    for (int i : nums) {
+      if (nums_set.find(i) != nums_set.end()) return true;
+      nums_set.insert(i);
     }
+
+    return false;
+  }
 };
 ```
