@@ -1,54 +1,35 @@
 # Intuition
-영문, 숫자를 제외한 모든 문자를 제거하고 반복문을 통해 팰린드롬인지 검사한다.
+전수조사를 해서 Two Sum을 찾는다.
 
 # Approach
-1. 입력 문자열 S에서 영문, 숫자를 새로운 문자 배열에 할당한다.
-    - 이때 대문자의 경우 문자코드를 이용해 소문자로 변환한다.
-2. 영문, 숫자로만 구성된 문자배열을 반복문을 통해 순회하여 팰린드롬인지 검사한다.
-    - left, right인덱스를 통해 양쪽에서 한칸씩 땡기며 검사한다.
-
+1. 2중 반복으로 Two Sum을 찾는다.
+    - 외부 반복은 nums.length - 1만큼 반복한다.
+    - 내부 반복은 외부 반복의 index + 1만큼 반복 한다.
+2. 내부 반복 중 Two Sum이 있으면 반환한다.
 
 # Complexity
-- Time complexity: `O(n)`
-    - 입력 문자열에서 영문, 숫자만 남기는 비용 `O(n)`
-    - 팰린드롬을 검사하는 비용 `O(n/2)`
-    - 총 시간복잡도 `O(n)`
+- Time complexity: `O((n * n) / 2)`
+    - 외부 반복 n, 내부 반복 n / 2
 - Space complexity: `O(n)`
-    - 새로운 문자 배열을 만들어서 알파벳, 숫자를 보관하기 때문에 `O(n)`
+    - 입력 배열 `O(n)`
 
 # Code
-시간복잡도: `O(n)`
-공간복잡도: `O(n)`
-Runtime: 2 ms
-Memory Usage: 43.5 MB
+Runtime: 45 ms
+Memory Usage: 44.4 MB
 ```java
 class Solution {
-    public boolean isPalindrome(String s) {
-        char[] origin = s.toCharArray();
-        char[] letters = new char[s.length()];
-        int index = 0;
-        for (char letter: origin) {
-            if (isAlphaNumber(letter)) {
-                letters[index++] = (letter >= 'A' && letter <= 'Z')? (char) (letter - ('A' - 'a')): letter;
+    public int[] twoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length - 1; ++i) {
+            for (int j = i + 1; j < nums.length; ++j) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[] {i, j};
+                }
             }
         }
-        int left = 0;
-        int right = index - 1;
-        while(left < right) {
-            if (letters[left] != letters[right]) return false;
-            ++left; --right;
-        }
-        return true;
+        return null;
     }
-
-    private boolean isAlphaNumber(char alphaNumber) {
-        return (
-            (alphaNumber >= 'a' && alphaNumber <= 'z') || (alphaNumber >= 'A' && alphaNumber <= 'Z') ||
-            (alphaNumber >= '0' && alphaNumber <= '9')
-        );
-    } 
 }
 ```
 
 # Learned
-범위 검사, 유효성 검사를 모듈화 하면 조금 더 깔끔하게 알고리즘을 작성할 수 있다는 것을 배웠다.
+테스트 케이스에 따라서 실행 속도가 차이 날 수 있다는 것을 알았다.
