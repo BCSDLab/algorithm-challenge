@@ -1,4 +1,5 @@
 # Intuition
+
 구매 최솟값과 최대 이익을 갱신하며 리스트를 순회한다
 
 # Approach
@@ -7,11 +8,9 @@
 2. 현재 이익이 최대 이익보다 크면 갱신한다.
 
 # Complexity
-- Time complexity: $O(n)$
-<!-- Add your time complexity here, e.g. $$O(n)$$ -->
 
+- Time complexity: $O(n)$
 - Space complexity: $O(1)$
-<!-- Add your space complexity here, e.g. $$O(n)$$ -->
 
 # Code
 ```python

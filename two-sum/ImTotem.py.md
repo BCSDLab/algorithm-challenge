@@ -1,6 +1,7 @@
 # Intuition
  
  정렬 후 투 포인터 기법을 사용하여 두 수의 합이 target이 되는 인덱스 쌍을 찾는다.
+ 
 # Approach
 
 1. (value, index) 쌍으로 정렬한다.
@@ -9,8 +10,8 @@
 4. 일치하는 쌍을 찾으면 원래 인덱스 반환한다.
 
 # Complexity
-- Time complexity: $O(n\ log(n))$
 
+- Time complexity: $O(n\ log(n))$
 - Space complexity: $O(n\ log(n))$
 
 # Code
