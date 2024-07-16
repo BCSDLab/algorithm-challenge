@@ -26,12 +26,21 @@ def count_updates_per_user(weeks):
 def print_user_updates(user_problem_count):
     for week, users in user_problem_count.items():
         print(f"\n{week}:")
+        print(f"{'User':<20}{'Problems Solved':<15}")
+        print('-' * 35)
         for user, count in users.items():
-            print(f"{user}: {count} 문제")
+            if user == '':
+                continue
+            print(f"{user:<20}{count:<15}")
+        print('-' * 35)
 
 def main():
-    weeks = input("주차를 입력하세요 (예: 1,2,3): ")
-    week_list = [f'week-0{week.strip()}' for week in weeks.split(',')]
+    weeks = input("보고싶은 주차를 입력하세요 (예: 1,2,3), (전체: *): ")
+    if weeks == '*':
+        week_list = [f'week-0{i}' for i in range(1, 9)]
+    else:
+        week_list = [f'week-0{week.strip()}' for week in weeks.split(',')]
+    print(week_list)
     user_problem_count = count_updates_per_user(week_list)
     print_user_updates(user_problem_count)
 
