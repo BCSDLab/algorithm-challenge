@@ -10,8 +10,8 @@
 - Time complexity: $O(N)$
     - 모든 노드를 한번씩 방문해서 좌우를 반전시킴 → $O(N)$
 
-- Space complexity: $O(h)$
-    - 재귀호출트리의 공간 $O(h)$
+- Space complexity: $O(logN)$
+    - 재귀호출트리의 공간 $O(logN)$
 
 # Code
 ``` java
