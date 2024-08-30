@@ -10,7 +10,6 @@
 ## 성능
 ---
 * O(n) / O(n)
-## 알게 된 것
 
 ## 코드
 ```cpp
@@ -26,20 +25,7 @@
  * };
  */
 class Solution {
- # Binary Tree Level Order Traversal
----
-## 문제 해결 방법
----
-  * BFS. 큐를 만들어서 루트부터 각 레벨, 좌우 짝 요소를 배열에 저장한다.
-  * 그 배열들을 결과 배열에 저장하여 반환한다.
-## 자료구조 알고리즘
----
-* 트리, BFS
-## 성능
----
-* O(n) / O(n)
-## 알게 된 것
-ublic:
+ public:
   vector<vector<int>> levelOrder(TreeNode* root) {
     vector<vector<int>> result;
     if (!root) return result;
